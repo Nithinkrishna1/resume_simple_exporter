@@ -2,12 +2,13 @@ require_relative 'exporter'
 require_relative 'formats_checker'
 class Reader
 	def take_input
-		puts "enter name marks for ai cs and maths"
-		$person =[]
-		(0..3).each do |x|
-			j=gets.chomp
-			$person.push(j)
-		end
+		puts "which all subjects do you attend"
+		subjects=gets.chomp
+		$marks =[]
+		$subjects_name = subjects.split(" ")
+		$subjects_name.each { |subjects| puts "enther the marks for #{subjects}" 
+		mark = gets.chomp 
+		$marks.push(mark) }
 
 	end
 	include FormatChecker
@@ -17,7 +18,7 @@ class Reader
 		puts formats_checker
 		puts "select the formats to export"
 		format_to_export = gets.chomp
-		export(format_to_export,$person)
+		export(format_to_export,$subjects_name,$marks)
 
 	end
 

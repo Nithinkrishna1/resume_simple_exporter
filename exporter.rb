@@ -3,14 +3,14 @@ require_relative 'text'
 module Exporter
 	include Csv
 	include Text
-	def export(format,data)
+	def export(format,subjects,marks)
 		puts format
 		if format == 'csv'
-			csv(format,data)
+			csv(format,subjects,marks)
 		elsif format == 'txt'
-			text(format,data)
+			text(format,subjects,marks)
 		else 
-			puts "boi"
+			puts "invalid selection: select the format that are listed"
 		end
 	end
 end
